@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -411,6 +412,62 @@
       background: var(--hover-bg);
     }
 
+    /* skill */
+
+    .skill-bar-container {
+    margin-bottom: 30px;
+  }
+
+  .skill-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: var(--text);
+  }
+
+  .bar {
+    background-color: #111;
+    border: 1px solid rgba(0, 255, 159, 0.3);
+    border-radius: 20px;
+    height: 20px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .bar-fill {
+    background-color: #00ff9f;
+    height: 100%;
+    border-radius: 20px 0 0 20px;
+    transition: width 0.6s ease-in-out;
+  }
+
+  .bar-percent {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: 0.85rem;
+    line-height: 20px;
+    color: #00ff9f;
+    font-weight: bold;
+  }
+
+  .tool-tags {
+    font-size: 0.8rem;
+    color: #ccc;
+    margin-top: 8px;
+  }
+
+  .tool-tags span {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 159, 0.2);
+    padding: 4px 8px;
+    margin: 2px;
+    display: inline-block;
+    border-radius: 4px;
+  }
+
+
     .exp-card, .project-card {
       background: var(--card-bg);
       padding: 20px;
@@ -650,10 +707,34 @@
 </div>
 </header>
 
-<section id="about" class="about">
+<!-- AOS CDN (if not already included) -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<section id="about" class="about" data-aos="fade-up">
   <h2>About Me</h2>
-  <p>I am a cybersecurity enthusiast who loves solving CTFs, reverse engineering, and finding vulnerabilities. I have been exploring red teaming, OSINT, and exploit development.</p>
+  <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding: 20px; flex-wrap: wrap;">
+
+    <p style="max-width: 700px; line-height: 1.8; flex: 1;">
+      I’m <strong>Srimant</strong> <code>|| Sri</code>, a self-proclaimed hacker & atheist navigating the digital cosmos.
+      who loves solving CTFs, reverse engineering, and finding vulnerabilities. 
+      I have been exploring red teaming, OSINT, and exploit development.<br/> <br>
+      If I’m not busy cracking the code of the universe (or just some random software), 
+      you’ll find me lost in the depths of philosophy, science, and tunes that rock my world—literally.<br/> <br>
+      My playlist is a chaotic mix of rock, metal, and hip-hop, because why not?
+    </p>
+
+    <img src="https://i.pinimg.com/originals/45/77/85/4577853f98ae7f2320f091dc999c30ac.gif" 
+         alt="Funny Hacker GIF"
+         style="max-width: 300px; border-radius: 8px; border: 1px solid rgba(0,255,159,0.3); box-shadow: 0 0 10px rgba(0,255,159,0.1); flex-shrink: 0;">
+  </div>
 </section>
+
+
+
 
 <section id="skills" class="skills">
   <h2>Skills & Tools</h2>
@@ -671,6 +752,50 @@
     <li>C</li>
     <li>JavaScript</li>
   </ul>
+
+  <div class="skill-bar-container">
+  <div class="skill-title">Payload Creation</div>
+  <div class="bar">
+    <div class="bar-fill" style="width: 89%;"></div>
+    <div class="bar-percent">89%</div>
+  </div>
+  <div class="tool-tags">
+    <span>MSFvenom</span><span>Obfuscator-LLVM</span><span>Veil</span><span>Shellter</span>
+  </div>
+</div>
+
+<div class="skill-bar-container">
+  <div class="skill-title">Custom Scripting & Automation</div>
+  <div class="bar">
+    <div class="bar-fill" style="width: 85%;"></div>
+    <div class="bar-percent">85%</div>
+  </div>
+  <div class="tool-tags">
+    <span>Python</span><span>Bash</span><span>PowerShell</span><span>AutoRecon</span>
+  </div>
+</div>
+
+<div class="skill-bar-container">
+  <div class="skill-title">Phishing & Social Engineering</div>
+  <div class="bar">
+    <div class="bar-fill" style="width: 76%;"></div>
+    <div class="bar-percent">76%</div>
+  </div>
+  <div class="tool-tags">
+    <span>Gophish</span><span>SEToolkit</span><span>SocialFish</span>
+  </div>
+</div>
+
+<div class="skill-bar-container">
+  <div class="skill-title">WAF Detection & Evasion</div>
+  <div class="bar">
+    <div class="bar-fill" style="width: 70%;"></div>
+    <div class="bar-percent">70%</div>
+  </div>
+  <div class="tool-tags">
+    <span>WafW00f</span><span>Burp Suite Pro</span><span>Payload Obfuscators</span>
+  </div>
+</div>
 </section>
 
 <section id="experience" class="experience">
@@ -775,6 +900,41 @@
 
 </footer>
 
+
+
+<!-- Scroll Progress Bar -->
+<div id="scroll-bar"></div>
+
+<!-- VanillaTilt.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+<script>
+  VanillaTilt.init(document.querySelectorAll(".cert-card, .project-card"), {
+    max: 10,
+    speed: 400,
+    glare: true,
+    "max-glare": 0.2,
+  });
+</script>
+
+<!-- Scroll Progress Script -->
+<script>
+  window.onscroll = function () {
+    const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+    document.getElementById("scroll-bar").style.width = scrolled + "%";
+  };
+</script>
+
+<style>
+  #scroll-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: #00ffcc;
+    width: 0%;
+    z-index: 9999;
+  }
+</style>
 
 </body>
 </html>
