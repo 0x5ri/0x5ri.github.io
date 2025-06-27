@@ -93,63 +93,7 @@
     }
 
     /* about section */
-   .terminal {
-  background: #0f0f0f;
-  color: #00ff9f;
-  font-family: 'Courier Prime', monospace;
-  border-radius: 10px;
-  padding: 20px;
-  border: 1px solid rgba(0, 255, 159, 0.3);
-  box-shadow: 0 0 10px rgba(0,255,159,0.1);
-  min-height: 300px;
-  max-width: 100%;
-  width: 100%;
-  max-width: 900px;   /* limits how wide it gets */
-  margin: 0 auto;     /* centers it */
-  overflow-x: auto;   /* horizontal scroll if needed */
-  min-height: 50%;
-}
-
-  #terminal-output {
-    white-space: pre-wrap;
-    margin-bottom: 10px;
-  }
-  .terminal-input {
-    display: flex;
-    align-items: center;
-  }
-  .terminal-input span {
-    margin-right: 5px;
-  }
-  .terminal-input input {
-    background: transparent;
-    border: none;
-    outline: none;
-    color: var(--text);
-    font-family: 'Courier Prime', monospace;
-    font-size: 1rem;
-    flex: 1;
-  }
-
-  .about-terminal {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 30px 20px;
-}
-  .terminal span.cmd {
-    color: #00ffff;
-  }
-  .terminal span.output {
-    color: #ffffff;
-  }
-  .terminal span.error {
-    color: #ff5555;
-  }
-  .terminal span.hint {
-    color: #9aedfe;
-  }
-
+   
 
     nav.navbar {
       background: #0f0f0f;
@@ -909,85 +853,22 @@
   AOS.init();
 </script>
 
-<section id="about" class="about-terminal" data-aos="fade-up">
-  <h2 class="glitch-effect">About Me</h2>
-  <div class="terminal">
-    <div id="terminal-output"></div>
-    <div class="terminal-input">
-      <span><span style="color:#00ffff;">root@0x5ri</span><span style="color:#999">:~</span><span style="color:#ff0055;">💀</span></span>
-      <input id="terminal-input" type="text" autocomplete="off" autofocus />
-    </div>
+<section id="about" class="about" data-aos="fade-up">
+  <h2>About Me</h2>
+  <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding: 20px; flex-wrap: wrap;">
+
+    <p style="max-width: 700px; line-height: 1.8; flex: 1;">
+      A self-proclaimed hacker & atheist. Who loves solving CTFs, reverse engineering, and finding vulnerabilities. 
+      I have been exploring red teaming, OSINT, and exploit development.<br/><br/>
+      You’ll find me lost in the depths of philosophy, science.<br/><br/>
+      My playlist is a chaotic mix of rock, metal, and hip-hop, because why not?
+    </p>
+
+    <img src="https://i.pinimg.com/originals/45/77/85/4577853f98ae7f2320f091dc999c30ac.gif" 
+         alt="Funny Hacker GIF"
+         style="max-width: 300px; border-radius: 8px; border: 1px solid rgba(0,255,159,0.3); box-shadow: 0 0 10px rgba(0,255,159,0.1); flex-shrink: 0;">
   </div>
 </section>
-
-
-<script>
-  const terminalOutput = document.getElementById("terminal-output");
-  const terminalInput = document.getElementById("terminal-input");
-
-  const files = {
-    "whoami.txt": `Self-taught hacker, reverse engineer, & cybersecurity explorer.
-CTF player, exploit developer, OSINT practitioner.
-Fascinated by red teaming, bug bounty hunting & social engineering.
-Digging deep into philosophy and science when not coding.
-
-Believe in breaking systems to understand them better.`,
-
-    "mypassions.txt": "CTFs | Red Teaming | OSINT | Reverse Engineering | Exploit Dev",
-
-    "vibe.txt": "Rock • Hip-Hop • Metal — Keeps my neurons firing ⚡",
-
-    "otherinterest.txt": "Philosophy, Science, Psychology, Curiosity and Observing Human Behavior."
-  };
-
-  const helpText = `Commands:
-  ls               List available files
-  cat <filename>   Show contents of a file
-  clear            Clear the terminal
-  --help | -h      Show help info`;
-
- function printToTerminal(text, type = "output") {
-  const span = document.createElement("span");
-  span.className = type;
-  span.innerHTML = text;
-  terminalOutput.appendChild(span);
-  terminalOutput.appendChild(document.createElement("br"));
-  terminalOutput.scrollTop = terminalOutput.scrollHeight;
-}
-  terminalInput.addEventListener("keydown", function(e) {
-    if (e.key === "Enter") {
-      const input = terminalInput.value.trim();
-      printToTerminal(`root@0x5ri:~<span style="color:#ff0055;">💀</span> ${input}`, "cmd");
-      handleCommand(input);
-      terminalInput.value = "";
-    }
-  });
-
-  function handleCommand(cmd) {
-    if (cmd === "ls") {
-      printToTerminal(Object.keys(files).join("  "));
-    } else if (cmd.startsWith("cat ")) {
-      const file = cmd.slice(4).trim();
-      if (files[file]) {
-        printToTerminal(files[file]);
-      } else {
-        printToTerminal(`cat: ${file}: No such file`);
-      }
-    } else if (cmd === "clear") {
-      terminalOutput.innerHTML = "";
-      printToTerminal("Welcome to 0x5ri's terminal. Type '-h' to begin.");
-    } else if (cmd === "--help" || cmd === "-h") {
-      printToTerminal(helpText, "hint");
-    } else if (cmd === "whoami") {
-      printToTerminal("srimant");
-    } else {
-      printToTerminal(`cat: ${file}: No such file`, "error");
-    }
-  }
-
-  // Initial message
-  printToTerminal("Welcome to 0x5ri's terminal. Type '-h' to begin.");
-</script>
 
 <section id="about">
   <h2 >My Work</h2>
