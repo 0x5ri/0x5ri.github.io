@@ -1,0 +1,646 @@
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#0b0d0c;color:#e9eee8;font-family:"DM Sans",sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit}.shell{width:min(1180px,calc(100% - 42px));margin:auto}.noise{position:fixed;inset:0;pointer-events:none;z-index:99;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E")}.cursor-glow{width:400px;height:400px;border-radius:50%;position:fixed;left:0;top:0;pointer-events:none;z-index:0;background:radial-gradient(circle,rgba(180,211,126,.09),transparent 68%);transform:translate(-50%,-50%)}.hero{min-height:100vh;position:relative;background:radial-gradient(circle at 80% 38%,#263127 0,#111512 30%,#0b0d0c 62%);display:flex;flex-direction:column}.nav{height:82px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:4}.logo{font:700 22px "Space Grotesk";letter-spacing:-1px}.logo span{color:#a9c876}.logo i{display:inline-block;width:6px;height:6px;background:#a9c876;border-radius:50%;margin-left:7px}.navlinks{display:flex;gap:28px;font-size:12px;color:#a9afaa}.navlinks a:hover{color:#fff}.live{font-size:10px;letter-spacing:1.4px}.live i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#a9c876;margin-right:8px;box-shadow:0 0 12px #a9c876;animation:pulse 1.5s infinite}.hero-grid{flex:1;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;padding:50px 0 100px}.overline,.section-index{font-size:10px;letter-spacing:2.2px;color:#89918b;font-weight:700}.hero h1{font:600 clamp(72px,10vw,142px)/.77 "Space Grotesk";letter-spacing:-8px;margin:28px 0 36px}.hero h1 em{font-style:normal;color:#a9c876}.intro{max-width:520px;font-size:17px;line-height:1.7;color:#9da59f}.cta{margin-top:30px;width:230px;border:1px solid #384039;display:flex;justify-content:space-between;padding:16px 18px;font-size:11px;letter-spacing:1.5px;font-weight:700;transition:.3s}.cta:hover{background:#a9c876;color:#111;border-color:#a9c876}.orbital{height:500px;position:relative;display:grid;place-items:center}.orbit{position:absolute;border:1px solid #ffffff12;border-radius:50%;animation:spin 20s linear infinite}.o1{width:380px;height:380px}.o2{width:260px;height:260px;animation-direction:reverse;animation-duration:13s}.o1:before,.o2:before{content:"";position:absolute;width:8px;height:8px;background:#a9c876;border-radius:50%;top:50%;left:-4px;box-shadow:0 0 20px #a9c876}.compass{width:150px;height:150px;border-radius:50%;border:1px solid #485148;display:flex;align-items:center;justify-content:center;position:relative;background:#101410}.compass>b{font-size:50px;color:#a9c876;animation:needle 5s ease-in-out infinite}.compass>span{position:absolute;top:12px;font-size:9px}.compass>small{position:absolute;top:170px;text-align:center;color:#69716b;font-size:9px;line-height:1.6}.float-tag{position:absolute;font:700 9px "Space Grotesk";letter-spacing:1.2px;padding:9px 12px;background:#141915;border:1px solid #30372f}.t1{left:0;top:24%;animation:float 4s ease-in-out infinite}.t2{right:-10px;top:50%;animation:float 5s ease-in-out infinite 1s}.t3{left:12%;bottom:14%;animation:float 4.5s ease-in-out infinite .5s}.ticker{overflow:hidden;border-top:1px solid #252a26;background:#a9c876;color:#111;padding:11px 0}.ticker-track{display:flex;width:max-content;animation:ticker 25s linear infinite}.ticker-track span{font:700 10px "Space Grotesk";letter-spacing:2px;white-space:pre}.manifesto{padding:140px 0;display:grid;grid-template-columns:180px 1fr 320px;gap:40px;align-items:end}.manifesto h2,.section-title h2,.map-head h2,.closing h2{font:600 clamp(44px,6vw,80px)/.95 "Space Grotesk";letter-spacing:-4px;margin:0}.manifesto h2 span{color:#59615b}.manifesto>p:last-child{color:#838b85;line-height:1.7}.journeys{background:#e7e6df;color:#111;padding:110px 0}.section-title{display:flex;align-items:end;justify-content:space-between;margin-bottom:50px}.section-title h2{font-size:65px}.filters{display:flex;gap:8px}.filter{border:1px solid #c7c8c0;background:transparent;padding:9px 13px;font-size:9px;letter-spacing:1.2px;cursor:pointer}.filter.active,.filter:hover{background:#111;color:#fff}.trip-list{display:grid;gap:16px}.trip{min-height:430px;display:grid;grid-template-columns:1.15fr .85fr;background:#f4f3ee;border:1px solid #d4d3cd;overflow:hidden;transition:transform .4s,opacity .4s}.trip:hover{transform:translateY(-5px)}.trip.reverse{grid-template-columns:.85fr 1.15fr}.trip.reverse .trip-art{order:2}.trip-art{position:relative;overflow:hidden;min-height:430px;padding:30px;display:flex;align-items:flex-end}.forest{background:radial-gradient(circle at 70% 25%,#81956d,#334637 43%,#18261d)}.forest:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(78deg,transparent 0 40px,#0a160b55 42px 46px,transparent 48px 80px);transform:scale(1.5) rotate(-4deg)}.coast{background:linear-gradient(#c9b783 0 42%,#6e918e 43% 62%,#c5aa76 63%)}.sun{position:absolute;width:130px;height:130px;border-radius:50%;background:#e8d6a0;right:17%;top:12%}.hills{background:linear-gradient(#8da28a,#536b55 52%,#25392c)}.mountains{position:absolute;bottom:90px;left:10%;font:700 90px/1 monospace;color:#1b3022;white-space:nowrap;transform:scaleX(2)}.unknown{background:#171a18}.question{font:600 180px "Space Grotesk";color:#292e2a;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}.route-doodle{position:absolute;top:30px;left:30px;right:30px;font:700 9px "Space Grotesk";letter-spacing:1.3px;display:flex;justify-content:space-between;color:#fff}.big-number{position:absolute;right:20px;bottom:-40px;font:700 220px "Space Grotesk";letter-spacing:-20px;color:#ffffff12}.art-label{position:relative;color:#fff;font:700 11px "Space Grotesk";letter-spacing:2px}.trip-info{padding:50px;display:flex;flex-direction:column;justify-content:center}.trip-info>div:first-child{display:flex;justify-content:space-between;align-items:center}.badge{font-size:9px;letter-spacing:1.5px;font-weight:700;border:1px solid #bbb;padding:6px 8px}.badge.solo{background:#111;color:#fff;border-color:#111}.badge.group{background:#8da16e;border-color:#8da16e}.date{font-size:9px;letter-spacing:1.3px;color:#777}.trip-info h3{font:600 clamp(42px,5vw,67px)/.93 "Space Grotesk";letter-spacing:-3px;margin:30px 0 20px}.trip-info p{color:#72756f;line-height:1.6;max-width:400px}.trip-meta{border-top:1px solid #d2d1cb;margin-top:25px;padding-top:17px;display:flex!important;gap:20px!important;justify-content:flex-start!important;font-size:9px;font-weight:700;letter-spacing:1px}.coming{opacity:.8}.trip.hidden{display:none}.roadmap{padding:120px 0;background:#101411}.map-head{display:flex;justify-content:space-between;align-items:end;margin:20px 0 40px}.map-head p{color:#707871}.map-board{height:580px;border:1px solid #303631;position:relative;overflow:hidden;background:radial-gradient(circle at center,#19201a,#0d100e)}.map-board svg{width:100%;height:100%}.map-shape{fill:#151a16;stroke:#343c35;stroke-width:1}.animated-route{fill:none;stroke:#a9c876;stroke-width:2;stroke-dasharray:8 8;animation:dash 20s linear infinite}.r2{animation-duration:16s}.r3{animation-duration:24s}.pin{fill:#dfe7d4;filter:drop-shadow(0 0 8px #a9c876)}svg text{fill:#aab1ac;font:700 12px "DM Sans";letter-spacing:1px}.map-note{position:absolute;right:25px;bottom:25px;font:700 11px "Space Grotesk";letter-spacing:1px}.map-note span{color:#69716b}.numbers{padding:120px 0;background:#a9c876;color:#111}.number-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:35px;border-top:1px solid #788f58;border-left:1px solid #788f58}.counter-card{padding:40px 25px;border-right:1px solid #788f58;border-bottom:1px solid #788f58}.counter-card b{font:600 90px "Space Grotesk";letter-spacing:-6px;display:block}.counter-card span{font-size:9px;letter-spacing:1.4px;font-weight:700}.closing{padding:150px 0;background:#e7e6df;color:#111}.closing .shell{max-width:900px;margin-left:max(21px,calc((100vw - 1180px)/2))}.closing p:not(.section-index){max-width:580px;color:#686c67;line-height:1.7}.cta.light{border-color:#aaa}.closing .cta:hover{background:#111;color:#fff;border-color:#111}footer{background:#090b0a;border-top:1px solid #242824;padding:35px 0}footer .shell{display:flex;justify-content:space-between;align-items:center}footer p{font-size:9px;letter-spacing:1.3px;color:#6f766f}.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}.reveal.visible{opacity:1;transform:none}@keyframes spin{to{transform:rotate(360deg)}}@keyframes pulse{50%{opacity:.3}}@keyframes float{50%{transform:translateY(-12px)}}@keyframes needle{50%{transform:rotate(25deg)}}@keyframes ticker{to{transform:translateX(-50%)}}@keyframes dash{to{stroke-dashoffset:-400}}@media(max-width:850px){.navlinks{display:none}.hero-grid{grid-template-columns:1fr;padding-top:80px}.orbital{height:330px;margin-top:20px}.o1{width:280px;height:280px}.o2{width:190px;height:190px}.hero h1{letter-spacing:-5px}.manifesto{grid-template-columns:1fr;padding:90px 0}.manifesto>p:last-child{max-width:500px}.section-title,.map-head{display:block}.filters{margin-top:25px}.trip,.trip.reverse{grid-template-columns:1fr}.trip.reverse .trip-art{order:0}.trip-art{min-height:320px}.trip-info{padding:35px}.number-grid{grid-template-columns:1fr 1fr}.map-board{height:420px}}@media(max-width:520px){.shell{width:calc(100% - 28px)}.live{display:none}.hero h1{font-size:67px;letter-spacing:-4px}.orbital{transform:scale(.88)}.manifesto h2,.section-title h2,.map-head h2,.closing h2{letter-spacing:-2px}.section-title h2{font-size:48px}.filters{overflow:auto}.filter{white-space:nowrap}.trip-info h3{font-size:45px}.trip-meta{flex-wrap:wrap}.number-grid{grid-template-columns:1fr}.counter-card b{font-size:70px}.map-board{height:330px}.map-board svg{transform:scale(1.2)}footer .shell{align-items:flex-start;gap:12px;flex-direction:column}.cursor-glow{display:none}}
+.lake{background:linear-gradient(#9eb8b0 0 42%,#537d7a 43% 68%,#2d5551)}.lake:before{content:"";position:absolute;inset:45% 0 0;background:repeating-linear-gradient(180deg,transparent 0 18px,#ffffff16 19px 20px)}.water-lines{position:absolute;right:10%;top:55%;font:700 28px monospace;color:#d5e5dc99;letter-spacing:3px;transform:rotate(-4deg)}.satapada{background:linear-gradient(#b8c7bc 0 35%,#668f86 36% 66%,#304f46 67%)}.satapada:before{content:"";position:absolute;left:-10%;right:-10%;bottom:0;height:42%;background:linear-gradient(170deg,transparent 0 35%,#18372d 36% 100%);clip-path:polygon(0 60%,18% 35%,30% 54%,48% 18%,62% 48%,78% 27%,100% 55%,100% 100%,0 100%)}.boat{position:absolute;left:22%;top:54%;font:700 55px monospace;color:#edf1e8;transform:rotate(-3deg)}
+
+.travel-orbital{overflow:visible}.travel-path{position:absolute;width:520px;height:520px;left:50%;top:50%;transform:translate(-50%,-50%);overflow:visible}.path-base{fill:none;stroke:#344037;stroke-width:2}.path-active{fill:none;stroke:#a9c876;stroke-width:2;stroke-dasharray:8 12;animation:dash 4s linear infinite}.destination circle{fill:#dfe7d4;stroke:#a9c876;stroke-width:2;filter:drop-shadow(0 0 8px #a9c876)}.destination text{fill:#aab1ac;font:700 10px "DM Sans";letter-spacing:1.5px}.bike{font-size:24px;filter:drop-shadow(0 0 7px #a9c876)}.route-status{position:absolute;right:-15px;top:8%;background:#141915;border:1px solid #39423a;padding:10px 13px;font-size:8px;letter-spacing:1.2px;display:grid;gap:4px}.route-status i{width:5px;height:5px;background:#a9c876;border-radius:50%;display:inline-block;box-shadow:0 0 10px #a9c876}.route-status b{font-size:9px;color:#a9c876}.route-count{position:absolute;left:3%;bottom:7%;font:700 34px "Space Grotesk";line-height:.8;color:#dfe7d4}.route-count small{font:700 8px "DM Sans";letter-spacing:1.4px;color:#69716b}.travel-orbital .o1{width:430px;height:430px}.travel-orbital .o2{width:330px;height:330px}
+
+@media(max-width:850px){.travel-path{width:390px;height:390px}.travel-orbital .o1{width:330px;height:330px}.travel-orbital .o2{width:250px;height:250px}.route-status{right:0}.route-count{left:0}}
+@media(max-width:520px){.travel-path{width:330px;height:330px}.travel-orbital .o1{width:290px;height:290px}.travel-orbital .o2{width:215px;height:215px}.destination text{font-size:8px}.route-status{top:2%;right:-5px}.route-count{bottom:2%;font-size:27px}}
+
+/* Continuous journey animation
+   The journey is artwork inside the hero, not a card.
+   It intentionally has no frame, border, shadow, or rectangular background. */
+.journey-loop{height:570px;position:relative;display:block;overflow:visible}
+.journey-title{position:absolute;z-index:30;top:20px;left:8%;right:5%;display:flex;justify-content:space-between;align-items:center;font:700 9px "Space Grotesk";letter-spacing:1.5px;color:#69736c;pointer-events:none}
+.journey-title span{color:#a9c876}.journey-title b{font-weight:500}
+.journey-stage{
+  position:absolute;
+  z-index:2;
+  top:28px;
+  left:-8%;
+  width:125%;
+  height:500px;
+  overflow:hidden;
+  border:0;
+  background:transparent;
+  border-radius:0;
+  box-shadow:none;
+  -webkit-mask-image:radial-gradient(ellipse 70% 68% at 54% 50%,#000 40%,rgba(0,0,0,.82) 62%,transparent 100%);
+  mask-image:radial-gradient(ellipse 70% 68% at 54% 50%,#000 40%,rgba(0,0,0,.82) 62%,transparent 100%);
+}
+.sky{position:absolute;inset:0;background:linear-gradient(#101b15 0%,#1b2a1d 48%,#29362a 70%,#182018 100%);animation:skyShift 30s linear infinite}
+.moon{position:absolute;width:55px;height:55px;border-radius:50%;right:12%;top:15%;background:#d8dfbd99;box-shadow:0 0 35px #d8dfbd22;animation:moonFloat 30s linear infinite}
+.mountain-layer{position:absolute;bottom:100px;width:120%;height:180px;left:-10%;background:#17251b;clip-path:polygon(0 100%,0 78%,10% 45%,17% 65%,27% 28%,36% 70%,47% 38%,56% 74%,66% 30%,76% 63%,87% 36%,100% 72%,100% 100%);animation:mountainScroll 18s linear infinite}
+.m2{bottom:92px;background:#243327;opacity:.75;transform:scale(1.15);animation-duration:13s;animation-direction:reverse}
+.scene{position:absolute;inset:0;opacity:0;animation:sceneCycle 30s linear infinite}
+.scene-name{position:absolute;top:22px;left:25px;font:700 10px "Space Grotesk";letter-spacing:2px;color:#c5d4b6;z-index:5}
+.scene-chilika{animation-delay:0s}.scene-satapada{animation-delay:6s}.scene-konark{animation-delay:12s}.scene-hindol{animation-delay:18s}.scene-koraput{animation-delay:24s}
+.water,.sat-water{position:absolute;left:-5%;right:-5%;bottom:0;height:48%;background:#315b54;overflow:hidden}
+.water:before,.sat-water:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(175deg,transparent 0 15px,#a8c8bb20 16px 18px);animation:waterMove 2s linear infinite}
+.wave{position:absolute;border:1px solid #b8d6ca55;border-radius:50%;width:330px;height:55px;left:10%;animation:wave 3s linear infinite}.w2{left:50%;animation-delay:1s}.w3{left:75%;animation-delay:2s}
+.boat{position:absolute;left:20%;bottom:45%;font-size:42px;animation:boatRide 3s ease-in-out infinite}
+.sun-disc{position:absolute;width:80px;height:80px;border-radius:50%;background:#d8c68c;right:19%;top:17%;box-shadow:0 0 45px #d8c68c55}
+.temple{position:absolute;bottom:102px;left:50%;transform:translateX(-50%);width:170px;height:135px;background:#756c4d;clip-path:polygon(5% 100%,5% 55%,20% 55%,20% 35%,35% 35%,35% 15%,50% 0,65% 15%,65% 35%,80% 35%,80% 55%,95% 55%,95% 100%);animation:templePulse 3s ease-in-out infinite}
+.temple i{position:absolute;bottom:15px;width:10px;height:70px;border-left:1px solid #c9bc8c55;transform:rotate(25deg)}.temple i:nth-child(1){left:20px}.temple i:nth-child(2){left:55px}.temple i:nth-child(3){left:90px}.temple i:nth-child(4){left:125px}.temple i:nth-child(5){left:145px}
+.road{position:absolute;height:58px;left:-5%;right:-5%;bottom:65px;background:#202620;transform:skewY(-4deg);border-top:2px solid #596557}.road:after{content:"";position:absolute;top:27px;left:0;right:0;border-top:2px dashed #a9b79c66;animation:roadDash .8s linear infinite}
+.forest-ground{position:absolute;bottom:0;left:0;right:0;height:45%;background:#203629}
+.tree{position:absolute;bottom:105px;width:28px;height:160px;background:#172a1c;border-radius:50% 50% 8% 8%;box-shadow:20px 20px 0 -7px #172a1c,-20px 25px 0 -5px #172a1c}.tr1{left:18%;transform:scale(1.1)}.tr2{left:70%;bottom:110px;transform:scale(.8)}.tr3{left:86%;bottom:100px;transform:scale(1.3)}
+.hill{position:absolute;bottom:100px;background:#29432f;border-radius:50% 50% 0 0}.h-a{width:380px;height:190px;left:-10%}.h-b{width:330px;height:150px;left:35%;background:#345039}.h-c{width:300px;height:175px;right:-8%;background:#213a29}
+.sat-water{height:54%}.small-boat{left:55%;bottom:35%;font-size:34px;animation:boatRide 4s ease-in-out infinite reverse}.bird{position:absolute;right:18%;top:30%;font-size:35px;color:#d3ddce;animation:birdFly 4s linear infinite}
+.market{position:absolute;bottom:105px;width:80px;height:80px;background:#7d5e45;clip-path:polygon(0 100%,0 35%,50% 0,100% 35%,100% 100%)}.mkt1{left:20%}.mkt2{left:42%;transform:scale(1.2)}.mkt3{left:67%;transform:scale(.8)}
+.traveler{position:absolute;z-index:10;left:0;bottom:85px;width:70px;height:70px;animation:travelerJourney 36s linear infinite}
+.bike-rider{font-size:43px;filter:drop-shadow(0 5px 5px #0008);animation:bikeBounce .22s linear infinite}
+.traveler-shadow{position:absolute;width:65px;height:9px;border-radius:50%;background:#0008;bottom:1px;left:3px;filter:blur(2px)}
+.motion-line{position:absolute;width:35px;border-top:2px solid #b7c8ac66;left:-30px;animation:motionTrail .35s linear infinite}.ml1{top:30px}.ml2{top:45px;animation-delay:.15s}
+.scene-label{position:absolute;z-index:12;bottom:74px;right:8%;background:transparent;border:0;padding:0;min-width:0;text-shadow:0 2px 16px #000;display:grid;gap:3px}
+.current-dot{display:inline-block;width:6px;height:6px;background:#a9c876;border-radius:50%;margin-right:7px;box-shadow:0 0 9px #a9c876}.current-location{font:700 10px "Space Grotesk";letter-spacing:1.4px}.scene-label small{display:block;color:#737d75;font-size:8px;letter-spacing:1.2px;margin-top:4px}
+.journey-progress{position:absolute;z-index:20;left:8%;right:5%;bottom:28px;height:1px;background:#ffffff12;overflow:hidden}.journey-progress i{display:block;width:16.66%;height:100%;background:#a9c876;animation:progress 30s linear infinite}
+.journey-caption{position:absolute;z-index:20;bottom:8px;left:0;right:0;text-align:center;color:#59635b;font-size:8px;letter-spacing:2px}
+@keyframes travelerJourney{0%{left:7%}16.6%{left:80%}33.2%{left:20%}49.8%{left:76%}66.4%{left:43%}83%{left:82%}100%{left:7%}}
+@keyframes sceneCycle{0%,18%{opacity:1}19%,100%{opacity:0}}16%,100%{opacity:0}}
+@keyframes progress{0%{transform:translateX(-100%)}100%{transform:translateX(600%)}}
+@keyframes waterMove{to{transform:translateX(45px)}}@keyframes wave{0%{transform:translateX(-60px);opacity:0}30%{opacity:1}100%{transform:translateX(280px);opacity:0}}
+@keyframes boatRide{50%{transform:translateY(-8px) rotate(-2deg)}}
+@keyframes bikeBounce{50%{transform:translateY(-2px) rotate(-1deg)}}
+@keyframes roadDash{to{transform:translateX(45px)}}@keyframes birdFly{0%{transform:translate(-60px,10px)}100%{transform:translate(80px,-20px)}}
+@keyframes templePulse{50%{filter:brightness(1.12)}}@keyframes skyShift{0%,100%{filter:hue-rotate(0)}50%{filter:hue-rotate(15deg)}}@keyframes moonFloat{50%{transform:translate(-80px,15px)}}@keyframes mountainScroll{to{transform:translateX(-90px)}}@keyframes motionTrail{to{transform:translateX(-12px);opacity:0}}.journey-stage:after{content:"";position:absolute;z-index:25;inset:0;pointer-events:none;background:
+  radial-gradient(ellipse 72% 70% at 58% 50%,transparent 42%,rgba(11,13,12,.12) 58%,rgba(11,13,12,.78) 84%,#0b0d0c 100%),
+  linear-gradient(90deg,#0b0d0c 0%,transparent 15%,transparent 84%,#0b0d0c 100%),
+  linear-gradient(180deg,#0b0d0c 0%,transparent 14%,transparent 86%,#0b0d0c 100%);
+}
+.scene{ -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 12%,#000 88%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 12%,#000 88%,transparent 100%);}
+.traveler{transition:opacity .25s ease;}
+
+
+.travel-orbital{overflow:visible}.travel-path{position:absolute;width:520px;height:520px;left:50%;top:50%;transform:translate(-50%,-50%);overflow:visible}.path-base{fill:none;stroke:#344037;stroke-width:2}.path-active{fill:none;stroke:#a9c876;stroke-width:2;stroke-dasharray:8 12;animation:dash 4s linear infinite}.destination circle{fill:#dfe7d4;stroke:#a9c876;stroke-width:2;filter:drop-shadow(0 0 8px #a9c876)}.destination text{fill:#aab1ac;font:700 10px "DM Sans";letter-spacing:1.5px}.bike{font-size:24px;filter:drop-shadow(0 0 7px #a9c876)}.route-status{position:absolute;right:-15px;top:8%;background:#141915;border:1px solid #39423a;padding:10px 13px;font-size:8px;letter-spacing:1.2px;display:grid;gap:4px}.route-status i{width:5px;height:5px;background:#a9c876;border-radius:50%;display:inline-block;box-shadow:0 0 10px #a9c876}.route-status b{font-size:9px;color:#a9c876}.route-count{position:absolute;left:3%;bottom:7%;font:700 34px "Space Grotesk";line-height:.8;color:#dfe7d4}.route-count small{font:700 8px "DM Sans";letter-spacing:1.4px;color:#69716b}.travel-orbital .o1{width:430px;height:430px}.travel-orbital .o2{width:330px;height:330px}
+
+
+@media(max-width:850px){
+  .journey-loop{height:430px;margin-top:20px}
+  .journey-stage{
+    top:0;
+    left:-18%;
+    width:136%;
+    height:390px;
+  }
+  .journey-title{top:4px;left:8%;right:8%}
+  .scene-label{bottom:54px;right:12%}
+  .journey-progress{left:10%;right:10%;bottom:18px}
+  .journey-caption{bottom:2px}
+}
+@media(max-width:520px){
+  .journey-loop{height:370px;margin-top:8px}
+  .journey-stage{
+    left:-28%;
+    width:156%;
+    height:340px;
+  }
+  .journey-title{font-size:8px;left:12%;right:12%}
+  .journey-title b{display:none}
+  .scene-label{bottom:48px;right:13%}
+  .journey-progress{bottom:15px}
+}
+
+
+/* ===== TRIPLOG HERO: TRUE FRAMED-LESS JOURNEY ARTWORK ===== */
+.journey-loop{
+  height:570px;
+  position:relative;
+  display:block;
+  overflow:visible;
+  isolation:isolate;
+}
+.journey-stage{
+  position:absolute;
+  z-index:2;
+  top:-22px;
+  left:-25%;
+  width:155%;
+  height:570px;
+  overflow:hidden;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+
+  /* The animation is a glow in the hero, not a rectangle. */
+  -webkit-mask-image:radial-gradient(ellipse 58% 54% at 54% 50%,
+    #000 0%,
+    #000 42%,
+    rgba(0,0,0,.82) 58%,
+    rgba(0,0,0,.38) 72%,
+    transparent 91%);
+  mask-image:radial-gradient(ellipse 58% 54% at 54% 50%,
+    #000 0%,
+    #000 42%,
+    rgba(0,0,0,.82) 58%,
+    rgba(0,0,0,.38) 72%,
+    transparent 91%);
+}
+
+/* Kill the old rectangular vignette that was creating the visible box. */
+.journey-stage:after{display:none !important}
+
+/* Make the artwork itself fade, instead of painting a dark rectangle over it. */
+.journey-stage > .sky{
+  inset:-12%;
+  opacity:.94;
+}
+.journey-stage > .moon,
+.journey-stage > .mountain-layer,
+.journey-stage > .scene{
+  opacity:inherit;
+}
+
+/* Curved route, inspired by map-route animation logic: one direction only. */
+.journey-road{
+  position:absolute;
+  z-index:8;
+  inset:0;
+  width:100%;
+  height:100%;
+  overflow:visible;
+  pointer-events:none;
+  opacity:.82;
+}
+.journey-road .road-segment{
+  fill:none;
+  stroke:#273129;
+  stroke-width:18;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.journey-road .road-segment::after{display:none}
+.journey-road .road-seg-konark,
+.journey-road .road-seg-hindol,
+.journey-road .road-seg-koraput,
+.journey-road .road-seg-pipili{
+  opacity:0;
+}
+.journey-road .road-segment{
+  filter:drop-shadow(0 2px 2px rgba(0,0,0,.35));
+}
+.journey-road .road-segment{
+  stroke-dasharray:1 0;
+}
+
+/* A second thin centre line gives the route the "moving map" feel. */
+.journey-road::after{
+  content:"";
+  position:absolute;
+}
+
+/* Bike follows a single forward-only curved path. No left/right ping-pong. */
+.traveler{
+  position:absolute;
+  z-index:15;
+  left:0;
+  bottom:auto;
+  top:0;
+  width:70px;
+  height:70px;
+  animation:travelerForward 36s linear infinite;
+  offset-path:path("M 70 390 C 150 390 185 350 250 365 C 325 385 340 275 430 300 C 515 325 545 230 650 270 C 720 295 770 330 850 285 C 900 260 930 270 970 275");
+  offset-rotate:0deg;
+  will-change:offset-distance,opacity;
+}
+.bike-rider{
+  display:block;
+  font-size:43px;
+  filter:drop-shadow(0 5px 5px #0008);
+  transform:scaleX(-1);
+  animation:bikeBounceForward .22s linear infinite;
+}
+.traveler-shadow{
+  position:absolute;
+  width:65px;
+  height:9px;
+  border-radius:50%;
+  background:#0008;
+  bottom:1px;
+  left:3px;
+  filter:blur(2px);
+}
+.motion-line{
+  position:absolute;
+  width:35px;
+  border-top:2px solid #b7c8ac66;
+  left:-30px;
+  animation:motionTrail .35s linear infinite;
+}
+.ml1{top:30px}.ml2{top:45px;animation-delay:.15s}
+
+/* Bike is hidden while the journey is on water. */
+@keyframes travelerFade{
+  0%,16.5%{opacity:0}
+  16.6%,33.2%{opacity:1}
+  33.3%,49.8%{opacity:1}
+  49.9%,83.2%{opacity:0}
+  83.3%,100%{opacity:1}
+}
+@keyframes travelerForward{
+  from{offset-distance:0%}
+  to{offset-distance:100%}
+}
+@keyframes bikeBounceForward{
+  50%{transform:scaleX(-1) translateY(-2px)}
+}
+
+/* Road visibility is synchronized to the road scenes only. */
+@keyframes roadSceneKonark{0%,16.6%{opacity:0}16.7%,33.2%{opacity:1}33.3%,100%{opacity:0}}
+@keyframes roadSceneHindol{0%,33.2%{opacity:0}33.3%,49.8%{opacity:1}49.9%,100%{opacity:0}}
+@keyframes roadSceneKoraput{0%,49.8%{opacity:0}49.9%,66.5%{opacity:1}66.6%,100%{opacity:0}}
+@keyframes roadScenePipili{0%,83.2%{opacity:0}83.3%,100%{opacity:1}}
+.road-seg-konark{animation:roadSceneKonark 36s linear infinite}
+.road-seg-hindol{animation:roadSceneHindol 36s linear infinite}
+.road-seg-koraput{animation:roadSceneKoraput 36s linear infinite}
+.road-seg-pipili{animation:roadScenePipili 36s linear infinite}
+
+/* No rectangular edges on the artwork, even at smaller widths. */
+@media(max-width:850px){
+  .journey-loop{height:460px}
+  .journey-stage{
+    top:-20px;
+    left:-34%;
+    width:168%;
+    height:470px;
+  }
+}
+@media(max-width:520px){
+  .journey-loop{height:390px}
+  .journey-stage{
+    top:-10px;
+    left:-48%;
+    width:196%;
+    height:400px;
+  }
+  .journey-title{left:15%;right:15%}
+}
+
+/* ===== HERO JOURNEY v5: FULL-BLEED, FORWARD-ONLY ROUTE ===== */
+.hero{overflow:hidden}
+.hero-grid{position:relative;z-index:3}
+.hero-copy{position:relative;z-index:8}
+.journey-loop.reveal{opacity:1;transform:none}
+.journey-loop{
+  position:absolute !important;
+  z-index:1;
+  inset:0;
+  width:100%;
+  height:100%;
+  margin:0 !important;
+  pointer-events:none;
+  overflow:hidden;
+}
+.journey-title{z-index:7;top:105px;left:auto;right:7%;width:28%;}
+.journey-stage{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  overflow:hidden !important;
+  border:0 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  background:transparent !important;
+  -webkit-mask-image:none !important;
+  mask-image:none !important;
+}
+.journey-stage:after{display:none !important}
+/* Localized atmosphere only. The old full-rectangle sky is gone. */
+.journey-stage>.sky{
+  inset:auto !important;
+  left:48% !important;
+  right:-8% !important;
+  top:14% !important;
+  bottom:14% !important;
+  background:radial-gradient(ellipse at 64% 48%,rgba(44,62,48,.78) 0%,rgba(34,50,39,.55) 36%,rgba(22,32,25,.28) 58%,transparent 78%) !important;
+  animation:none !important;
+  opacity:1 !important;
+}
+.journey-stage>.moon{
+  right:9% !important;
+  top:27% !important;
+  width:54px !important;
+  height:54px !important;
+  opacity:.72;
+  animation:moonFloat 30s linear infinite;
+}
+.journey-stage>.mountain-layer{
+  left:50% !important;
+  width:65% !important;
+  bottom:22% !important;
+  height:170px !important;
+  opacity:.46 !important;
+}
+.journey-stage>.m2{opacity:.28 !important;bottom:20% !important}
+.scene{
+  -webkit-mask-image:none !important;
+  mask-image:none !important;
+  background:transparent !important;
+}
+.scene-name{top:24%;left:auto;right:7%;opacity:.62}
+.scene .road{display:none !important}
+/* Water is an organic pool, never a rectangular strip. */
+.water,.sat-water{
+  left:auto !important;
+  right:2% !important;
+  bottom:20% !important;
+  width:48% !important;
+  height:27% !important;
+  border-radius:50% !important;
+  background:radial-gradient(ellipse at center,rgba(59,103,94,.78),rgba(45,80,74,.45) 55%,transparent 75%) !important;
+  opacity:.75;
+  -webkit-mask-image:radial-gradient(ellipse,#000 0 52%,transparent 76%);
+  mask-image:radial-gradient(ellipse,#000 0 52%,transparent 76%);
+}
+.water:before,.sat-water:before{background:repeating-linear-gradient(175deg,transparent 0 15px,#c0ded420 16px 18px) !important}
+.boat{left:44% !important;bottom:38% !important;opacity:.9}
+.small-boat{left:53% !important;bottom:35% !important}
+.journey-road{position:absolute;inset:0;width:100%;height:100%;z-index:9;overflow:visible;pointer-events:none}
+.road-main-shadow{fill:none;stroke:rgba(7,10,8,.72);stroke-width:25;stroke-linecap:round;stroke-linejoin:round}
+.road-main{fill:none;stroke:rgba(55,68,58,.92);stroke-width:15;stroke-linecap:round;stroke-linejoin:round}
+.road-center{fill:none;stroke:rgba(181,196,163,.42);stroke-width:2;stroke-dasharray:10 12;stroke-linecap:round}
+/* Fade the route into the hero at both ends, with extra fade beneath the headline. */
+.journey-stage::before{
+  content:"";position:absolute;inset:0;z-index:30;pointer-events:none;
+  background:
+    linear-gradient(90deg,#0b0d0c 0%,rgba(11,13,12,.96) 13%,rgba(11,13,12,.34) 35%,transparent 55%,transparent 86%,#0b0d0c 100%),
+    linear-gradient(180deg,#0b0d0c 0%,transparent 19%,transparent 78%,#0b0d0c 100%);
+}
+.traveler{
+  z-index:40 !important;
+  width:72px !important;height:72px !important;
+  left:0 !important;top:0 !important;bottom:auto !important;
+  animation:none !important;
+  will-change:transform,opacity;
+}
+.bike-rider{
+  display:block;
+  font-size:42px;
+  filter:drop-shadow(0 5px 5px #0008);
+  transform:scaleX(-1);
+}
+.traveler-shadow{display:none}
+.motion-line{opacity:.45}
+.scene-label{z-index:45;right:7%;bottom:23%;background:transparent !important;border:0 !important}
+.journey-progress{z-index:45;left:61%;right:7%;bottom:13%;background:#ffffff14}
+.journey-caption{z-index:45;left:61%;right:7%;bottom:9%;text-align:center}
+
+@media(max-width:850px){
+  .journey-loop{position:absolute !important;inset:0 !important;height:100% !important}
+  .journey-title{top:94px;right:6%;width:42%}
+  .journey-stage>.sky{left:25% !important;right:-20% !important;top:30% !important;bottom:10% !important}
+  .journey-stage>.mountain-layer{left:25% !important;width:90% !important;bottom:17% !important}
+  .journey-stage::before{background:linear-gradient(90deg,#0b0d0c 0%,rgba(11,13,12,.88) 18%,rgba(11,13,12,.2) 55%,#0b0d0c 100%),linear-gradient(180deg,#0b0d0c 0%,transparent 22%,transparent 82%,#0b0d0c 100%)}
+  .journey-progress,.journey-caption{left:48%;right:6%}
+}
+@media(max-width:520px){
+  .journey-title{top:88px;width:48%;font-size:8px}
+  .journey-title b{display:none}
+  .journey-stage>.sky{left:8% !important;right:-35% !important;top:40% !important;bottom:8% !important}
+  .journey-stage>.moon{right:5% !important;top:24% !important;width:42px !important;height:42px !important}
+  .journey-stage>.mountain-layer{left:0 !important;width:125% !important;bottom:14% !important}
+  .scene-name{right:5%;top:35%;font-size:8px}
+  .journey-progress,.journey-caption{left:36%;right:5%}
+  .traveler{transform:scale(.78);transform-origin:center}
+}
+
+/* FINAL HERO JOURNEY GEOMETRY
+   The journey belongs to the hero, not to the constrained content shell. */
+.hero-grid{position:static !important;}
+.hero-copy{position:relative;z-index:80 !important;}
+.journey-loop{
+  position:absolute !important;
+  inset:0 !important;
+  width:100vw !important;
+  height:100% !important;
+  margin:0 !important;
+  z-index:20 !important;
+  overflow:hidden !important;
+}
+.journey-stage{
+  position:absolute !important;
+  inset:0 !important;
+  width:100vw !important;
+  height:100% !important;
+  overflow:visible !important;
+}
+.journey-stage::before{
+  background:
+    linear-gradient(90deg,
+      #0b0d0c 0%,
+      #0b0d0c 10%,
+      rgba(11,13,12,.94) 19%,
+      rgba(11,13,12,.58) 30%,
+      rgba(11,13,12,.16) 43%,
+      transparent 57%,
+      transparent 86%,
+      rgba(11,13,12,.18) 93%,
+      #0b0d0c 100%
+    ),
+    linear-gradient(180deg,
+      #0b0d0c 0%,
+      transparent 17%,
+      transparent 80%,
+      #0b0d0c 100%
+    ) !important;
+}
+.journey-stage>.sky{
+  left:30% !important;
+  right:-4% !important;
+  top:8% !important;
+  bottom:10% !important;
+  background:radial-gradient(ellipse at 67% 45%,
+    rgba(44,62,48,.72) 0%,
+    rgba(34,50,39,.48) 34%,
+    rgba(22,32,25,.22) 57%,
+    transparent 79%) !important;
+}
+.journey-stage>.mountain-layer{
+  left:34% !important;
+  width:70% !important;
+  bottom:15% !important;
+}
+.journey-road{
+  position:absolute !important;
+  inset:0 !important;
+  width:100vw !important;
+  height:100% !important;
+  overflow:visible !important;
+  z-index:35 !important;
+}
+.road-main-shadow{stroke-width:28}
+.road-main{stroke-width:17}
+.road-center{stroke-width:2.2}
+.traveler{
+  z-index:60 !important;
+  width:76px !important;
+  height:76px !important;
+  transform-origin:50% 50% !important;
+}
+.bike-rider{
+  display:block !important;
+  font-size:44px !important;
+  transform:scaleX(-1) !important;
+}
+.scene-label{right:5% !important;bottom:19% !important;z-index:70 !important}
+.journey-title{right:5% !important;width:27% !important;z-index:70 !important}
+.journey-progress{left:61% !important;right:5% !important;z-index:70 !important}
+.journey-caption{left:61% !important;right:5% !important;z-index:70 !important}
+
+/* At the final stretch, the route and traveler continue beyond the viewport edge. */
+@media(min-width:1200px){
+  .journey-stage .journey-road{width:calc(100vw + 260px) !important;}
+}
+@media(max-width:850px){
+  .journey-loop,.journey-stage{width:100vw !important;}
+  .journey-stage>.sky{left:15% !important;right:-20% !important;}
+  .journey-stage>.mountain-layer{left:20% !important;width:100% !important;}
+  .journey-progress,.journey-caption{left:48% !important;right:5% !important;}
+}
+@media(max-width:520px){
+  .journey-stage>.sky{left:0 !important;right:-30% !important;}
+  .journey-stage>.mountain-layer{left:0 !important;width:125% !important;}
+  .journey-progress,.journey-caption{left:34% !important;right:5% !important;}
+}
+
+/* V3 clean hero: keep the cinematic journey artwork, remove road + bike. */
+.road-main, .road-main-shadow, .road-center,
+.vehicle-bike, .bike, .traveler, #vehicle-bike, #bike, #traveler {
+  display: none !important;
+}
+
+/* Clean live-journey label: one changing destination at the bottom. */
+.live-journey-label{
+  position:absolute !important;
+  left:auto !important;
+  right:7% !important;
+  top:auto !important;
+  bottom:70px !important;
+  z-index:40 !important;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  min-width:170px;
+  padding:9px 13px;
+  background:rgba(8,12,10,.42);
+  border:1px solid rgba(180,205,150,.10);
+  backdrop-filter:blur(5px);
+  color:#e8eee3;
+}
+.live-journey-label .dot{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#afd16f;
+  box-shadow:0 0 12px rgba(175,209,111,.7);
+  flex:0 0 auto;
+}
+.live-journey-label .label-name{
+  font-size:10px;
+  letter-spacing:.18em;
+  font-weight:700;
+}
+.live-journey-label small{
+  margin-left:auto;
+  font-size:7px;
+  letter-spacing:.18em;
+  opacity:.48;
+}
+@media(max-width:700px){
+  .live-journey-label{
+    right:6%;
+    bottom:62px !important;
+  }
+}
+
+/* Final ticker layer: always readable above journey artwork. */
+#heroTicker,
+.ticker{
+  position:relative !important;
+  z-index:9999 !important;
+  isolation:isolate;
+  opacity:1 !important;
+  visibility:visible !important;
+  color:#dfe9d7 !important;
+  text-shadow:0 2px 12px rgba(0,0,0,.95);
+  background:rgba(7,10,8,.72) !important;
+  overflow:visible !important;
+}
+#heroTicker *{
+  position:relative;
+  z-index:10000 !important;
+  color:inherit;
+}
+.hero,
+.hero-content,
+.hero-copy{
+  overflow:visible !important;
+}
+
+/* FINAL LABEL LAYOUT
+   The destination indicator belongs only at the bottom where CHILIKA was.
+   There is intentionally no destination/step text at the top. */
+.journey-title,
+.scene-name{
+  display:none !important;
+}
+
+.live-journey-label{
+  position:absolute !important;
+  right:7% !important;
+  left:auto !important;
+  top:auto !important;
+  bottom:70px !important;
+  z-index:200 !important;
+  display:flex !important;
+  align-items:center;
+  gap:9px;
+  min-width:170px;
+  padding:9px 13px;
+  background:rgba(8,12,10,.72) !important;
+  border:1px solid rgba(180,205,150,.16) !important;
+  color:#e8eee3 !important;
+  backdrop-filter:blur(6px);
+}
+.live-journey-label .label-name{
+  font:700 10px "Space Grotesk";
+  letter-spacing:.18em;
+}
+.live-journey-label small{
+  margin-left:auto;
+  font-size:7px;
+  letter-spacing:.18em;
+  opacity:.55;
+}
+@media(max-width:700px){
+  .live-journey-label{
+    right:7% !important;
+    bottom:54px !important;
+    min-width:145px !important;
+    padding:8px 10px !important;
+  }
+}
+
+.upcoming-badge{background:#111;color:#a9c876;border-color:#111}.upcoming-trip{border-color:#a9c876!important;box-shadow:0 0 0 1px #a9c87622,0 20px 70px #7d995d14}.upcoming-art{background:radial-gradient(circle at 65% 35%,#40553d,#1b2b20 50%,#101713)!important}.upcoming-art:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,#a9c87612 50%,transparent 70%);animation:upSweep 4s linear infinite}@keyframes upSweep{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+.map-route{fill:none;stroke:#4c5b4d;stroke-width:3;stroke-linecap:round;stroke-dasharray:4 10;transition:.45s}.map-route.route-hot{stroke:#a9c876;stroke-width:5;filter:drop-shadow(0 0 9px #a9c876);animation:routeFlow 1s linear infinite}@keyframes routeFlow{to{stroke-dashoffset:-38}}.map-pin{cursor:pointer;transition:.3s}.map-pin:hover{transform:scale(1.2);transform-origin:center}.map-pin circle{transition:.3s}.map-pin:hover circle{fill:#a9c876;filter:drop-shadow(0 0 18px #a9c876)}.route-legend{display:flex;gap:8px;margin-top:10px}.route-legend button{background:#151a16;color:#aab1ac;border:1px solid #303631;padding:10px 13px;font:700 9px "Space Grotesk";letter-spacing:1px;cursor:pointer}.route-legend button:hover{border-color:#a9c876;color:#a9c876}.closing-grid{display:grid;grid-template-columns:1fr 330px;gap:70px;align-items:end}.closing h2 em{font-style:normal;color:#66705f}.closing-card{background:#111;color:#e8eee7;padding:28px;box-shadow:20px 20px 0 #cfd0c7}.closing-card strong{display:block;font:600 90px "Space Grotesk";color:#a9c876}.closing-card small{color:#8b948d}.closing-card b{display:block;margin-top:15px}.mini-line{height:1px;background:#ffffff1c;margin:15px 0}.mini-line i{display:block;width:72%;height:100%;background:#a9c876}@media(max-width:850px){.closing-grid{grid-template-columns:1fr}}
+/* MAP V2: interactive route-control board */
+.map-board-v2{position:relative;overflow:hidden;min-height:560px;background:#080d09!important;border:1px solid #273128!important;box-shadow:inset 0 0 100px #000,0 25px 80px #0008!important}
+.map-board-v2 .map-grid{position:absolute;inset:0;background-image:linear-gradient(#a9c8760b 1px,transparent 1px),linear-gradient(90deg,#a9c8760b 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,#000,transparent 92%);opacity:.7}
+.map-board-v2 .map-scan{position:absolute;left:0;right:0;top:-30%;height:30%;background:linear-gradient(to bottom,transparent,#a9c87612,transparent);border-bottom:1px solid #a9c87622;animation:mapScan 6s linear infinite;pointer-events:none}
+@keyframes mapScan{to{transform:translateY(440%)}}
+.map-topline{position:absolute;top:20px;left:24px;right:24px;display:flex;justify-content:space-between;font:700 8px "Space Grotesk";letter-spacing:.18em;color:#7f8a80;z-index:5}
+.trip-map{position:absolute;inset:45px 20px 45px;width:calc(100% - 40px);height:calc(100% - 90px);overflow:visible}
+.map-land{fill:#101710;stroke:#273128;stroke-width:2}
+.route{fill:none;stroke:#4d5a4d;stroke-width:2.5;stroke-linecap:round;stroke-dasharray:2 12;opacity:.72;transition:stroke .35s,stroke-width .35s,opacity .35s,filter .35s}
+.route:after{content:""}
+.route-koraput{stroke:#8ea96b;stroke-dasharray:5 9;opacity:.95}
+.route.active,.route:hover{stroke:url(#routeHot);stroke-width:5;opacity:1;filter:url(#routeGlow);animation:routeTravel 1.2s linear infinite}
+.route-koraput.active{stroke:url(#routeFuture);stroke-dasharray:5 8;animation:routeTravel .75s linear infinite,routePulse 1.8s ease-in-out infinite}
+@keyframes routeTravel{to{stroke-dashoffset:-42}}
+@keyframes routePulse{50%{filter:url(#routeGlow);opacity:.55}}
+.map-node{cursor:pointer;outline:none}.map-node circle{fill:#111811;stroke:#687461;stroke-width:2;transition:.3s}.map-node text{fill:#9ba59b;font:700 9px "Space Grotesk";letter-spacing:.12em;transition:.3s}.map-node:hover circle,.map-node:focus circle,.map-node.active circle{fill:#a9c876;stroke:#e8f8c8;filter:drop-shadow(0 0 13px #a9c876)}.map-node:hover text,.map-node:focus text,.map-node.active text{fill:#e4f4c5}.upcoming-node circle{stroke:#a9c876;stroke-dasharray:3 3}.upcoming-node:after{content:""}
+.map-orbit circle{fill:none;stroke:#a9c876;opacity:.18}.orbit-a circle:last-child{animation:orbitPulse 2s ease-out infinite}.orbit-b circle:last-child{animation:orbitPulse 2s ease-out infinite .8s}@keyframes orbitPulse{0%{r:12px;opacity:.7}100%{r:42px;opacity:0}}
+.map-status{position:absolute;left:24px;bottom:22px;display:grid;grid-template-columns:auto 1fr;column-gap:8px;z-index:5}.map-status .status-dot{width:7px;height:7px;border-radius:50%;background:#a9c876;box-shadow:0 0 14px #a9c876;align-self:center;grid-row:span 2;animation:statusBlink 1.4s infinite}.map-status b{font:700 9px "Space Grotesk";letter-spacing:.15em;color:#dfe9d7}.map-status small{font-size:8px;letter-spacing:.1em;color:#687269;margin-top:3px}@keyframes statusBlink{50%{opacity:.35}}
+.map-route-list{position:absolute;right:24px;bottom:20px;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;max-width:65%;z-index:5}.map-route-list button{border:1px solid #2c352d;background:#0d130f;color:#7f897f;padding:9px 10px;font:700 8px "Space Grotesk";letter-spacing:.1em;cursor:pointer;transition:.25s}.map-route-list button i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#536052;margin-right:6px}.map-route-list button:hover,.map-route-list button.active{border-color:#a9c876;color:#dcecc2;background:#151d14}.map-route-list button.active i{background:#a9c876;box-shadow:0 0 8px #a9c876}.map-route-list button.future{color:#a9c876}.map-note{position:absolute;right:24px;top:68px;display:flex;flex-direction:column;align-items:flex-end;z-index:5}.map-note strong{font:600 54px "Space Grotesk";line-height:.9;color:#dfe9d7}.map-note span,.map-note em{font:700 7px "Space Grotesk";letter-spacing:.16em;color:#697369;font-style:normal;margin-top:5px}.map-note em{color:#a9c876}
+@media(max-width:700px){.map-board-v2{min-height:510px}.map-topline{font-size:7px}.map-topline span:last-child{display:none}.map-note{top:62px;right:14px}.map-note strong{font-size:40px}.map-route-list{left:14px;right:14px;bottom:18px;max-width:none;justify-content:flex-start}.map-route-list button{padding:8px}.map-status{left:14px;bottom:78px}.trip-map{inset:40px 5px 80px;width:calc(100% - 10px);height:calc(100% - 120px)}}
